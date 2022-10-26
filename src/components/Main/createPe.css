@@ -1,0 +1,16 @@
+.allCreatePeople{
+    font-family: Arial;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    min-height: 100px;
+}
+
+.peoples{
+    margin: 20px;
+    padding: 20px;
+}
+
+.pl{
+    padding: 20px;
+}

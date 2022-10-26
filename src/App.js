@@ -1,35 +1,27 @@
-import React, {useState} from "react";
-import './Styles/app.css';
-import PostList from "./Components/PostList";
+import './App.css';
+import Header from "./components/Header/header";
+import Main from "./components/Main/main";
+import Navigation from "./components/Navigation/navigation";
+import {Route, Routes} from "react-router-dom";
+import CreateDoc from "./components/Main/CreateDoc";
+import CreatePe from "./components/Main/CreatePe";
+import AllInformation from "./components/Main/AllInformation";
 
-function App() {
-
-    const [posts, setPostes] = useState(
-        [
-            {id: 1, title: 'JavaScript', body: 'Язык Программирования'},
-            {id: 2, title: 'Java', body: 'Язык Программирования'},
-            {id: 3, title: 'C#', body: 'Язык Программирования'},
-            {id: 4, title: 'Python', body: 'Язык Программирования'},
-            {id: 5, title: 'LIPS', body: 'Язык Программирования'}
-        ]
-    );
-
-    const [posts2, setPostes2] = useState(
-        [
-            {id: 1, title: 'JavaScript', body: 'Язык Программирования'},
-            {id: 2, title: 'Java', body: 'Язык Программирования'},
-            {id: 3, title: 'C#', body: 'Язык Программирования'},
-            {id: 4, title: 'Python', body: 'Язык Программирования'},
-            {id: 5, title: 'LIPS', body: 'Язык Программирования'}
-        ]
-    );
-
-    return (
-    <div className="App">
-        <PostList post={posts} title="Список постов 1"></PostList>
-        <PostList post={posts2} title="Список постов 2"></PostList>
-    </div>
-  );
+const App = (props) => {
+   return(
+       <div className="app-wrapper">
+           <Header/>
+           <Navigation/>
+           <div className="app-wrapper-content">
+               <Routes>
+                   <Route path="/home*" element={<Main state={props.state}/>}/>
+                   <Route path="/otchetOne*" element={<CreateDoc/>}/>
+                   <Route path="/createPeople*" element={<CreatePe/>}/>
+                   <Route path="/allwatch*" element={<AllInformation/>}/>
+               </Routes>
+           </div>
+       </div>
+   )
 }
 
 export default App;

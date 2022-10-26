@@ -1,0 +1,9 @@
+.header{
+    width: 100%;
+    height: 100px;
+    grid-area: h;
+    background-color: dodgerblue;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
